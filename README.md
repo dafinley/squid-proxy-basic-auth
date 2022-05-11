@@ -25,6 +25,12 @@ For Example
 curl --proxy-basic --proxy-user doug.finley:password --proxy http://127.0.0.1:3128 http://www.google.com
 ```
 
+To run with docker-compose you can use the following command:
+
+```bash
+docker-compose up -d --build
+```
+
 License
 ----
 
