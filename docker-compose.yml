@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+   proxy:
+     image: squid-auth:1.0
+     restart: unless-stopped
+     build: .
+     ports:
+             - 3128:3128
+     environment:
+       - "PROXY_USERNAME=YOUR_USER_NAME"
+       - "PROXY_PASSWORD=YOUR_SECURE_PASSWORD"
