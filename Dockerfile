@@ -1,8 +1,8 @@
-FROM ubuntu:latest
+FROM ubuntu:18.04
 
-RUN apt-get -qqy update
-RUN apt-get -qqy upgrade
-RUN apt-get -qqy install apache2-utils squid3
+RUN apt-get update && \
+    apt-get -qqy install apache2-utils squid3 && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
 
 COPY squid.conf /etc/squid/squid.conf
 COPY entrypoint.sh /
